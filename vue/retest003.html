@@ -39,6 +39,8 @@
     {{t}}
     <br>
     {{date}}
+    <br>
+    {{month}}
 </div>
 <script>
     let vm = new Vue({
@@ -50,7 +52,8 @@
             date:new Date().getTime(),
             t:new Date().getTime(),
             ti:true,
-            cha:0
+            cha:0,
+            month:0
         },
         methods:{
             start:function () {
@@ -68,6 +71,7 @@
                 this.cha=0
                 this.t=new Date().getTime()
                 this.ti=true
+                this.widths=0
             }
         },
         mounted: function () {
@@ -79,6 +83,11 @@
                 }
                 if (_this.widths<100){
                     _this.widths=(_this.date-_this.t)/100
+                }else {
+                    _this.cha=0
+                    _this.t=new Date().getTime()
+                    _this.widths=0
+                    _this.month=_this.month+1
                 }
                 // 每隔1秒钟更新一次date
             }, 1);
