@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery示例4-1</title>
+    <script src="./jquery-3.6.0.js"></script>
+    <style>
+        .myDiv1{
+            border: 5px;
+            width:200px;
+            height:200px;
+            background-color: cornflowerblue;
+        }
+        #divID1{
+            border: 5px;
+            width:500px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="myDiv1"></div>
+    <p></p>
+    <div  id="divID1"></div>
+    <p></p>
+    <div class="myDiv1"></div>
+    <!--以下代码如放在div元素前面，则不能实现div的隐藏，因为代码执行时，页面元素还未加载完成-->
+    <script>
+             var myDiv = document.querySelector('div');
+             console.dir(myDiv);
+             $(function(){
+	   console.dir($("div"));
+                  $('div').eq(1).hide();             
+             })
+    </script>
+    
+</body>
+</html>

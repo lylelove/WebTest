@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0 auto;
+            border: 0 ;
+        }
+        #head{
+            background-color: #E9DC51;
+            height: 50px;
+            font-size: 2rem;
+        }
+        #content{
+            background-color: #e0e0e0;
+            height: 30rem;
+        }
+        #time{
+            background-color: #00CCFF;
+            height: 20px;
+        }
+    </style>
+  <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div id="head">
+        <div>图</div>
+    </div>
+    <div id="content">
+        <div id="time" :style="{width:widths+'%'}"></div>
+    </div>
+    <input V-model="widths">{{widths}}<br>
+    {{t}}
+    <br>
+    {{date}}
+</div>
+<script>
+    d = new Date()
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            message:'<a>123</a>',
+            changed:false,
+            widths:0,
+            date:new Date(),
+            t : d.getTime()
+        },
+        methods:{
+
+        },
+        mounted: function () {
+            var _this = this;
+            this.timer = setInterval(function() {
+                _this.date = new Date().getTime();
+                if (_this.widths<100){
+                    _this.widths=(_this.date-_this.t)/100
+                }
+                // 每隔1秒钟更新一次date
+            }, 1);
+
+        },
+        beforeDestroy: function () {   // 清除定时器
+            if (this.timer) {
+                clearInterval(this.timer);
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

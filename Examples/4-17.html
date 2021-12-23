@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery示例4-17</title>
+    <script src="jQuery_min.js"></script>
+    <style>
+        .cart-thread{
+            width: 200px;
+            height: 50px;
+            background-color:mediumblue;
+            color:mintcream;
+            border:5px;
+        }
+        .cart-item{
+            width: 200px;
+            height: 150px;
+            background-color:lightsteelblue;
+            border:5px;
+        }
+    </style>
+</head>
+<body>
+    <H2>***********用jQuery实现元素内容操作***********</H2>
+    
+    <div class="cart-thread">
+        <span>原始内容</span>
+    </div>
+    <p></p>
+    <input type="text" value="请输入内容">
+    <p></p>
+    <button>修改元素内容</button>
+    <button>修改元素文本内容</button>
+    <button>修改表单值</button>
+    
+    <script>
+        //获取和设置元素内容 html()
+        console.log($("div").html());
+        $("button").eq(0).click(function(){
+            $("div").html("修改后的内容1");
+        });
+
+        //获取和设置元素文本内容 text()
+        console.log($("div").text());
+        $("button").eq(1).click(function(){
+            $("div").text("修改后的内容2");
+        });
+
+        //获取和设置表单值 val()
+        console.log($("input").val());
+        $("button").eq(2).click(function(){
+            $("input").val("hello jQuery");
+        });
+        
+
+        
+    </script>
+
+</body>
+</html>

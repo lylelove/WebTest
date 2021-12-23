@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery示例4-3</title>
+    <script src="jQuery_min.js"></script>
+    <style>
+        div{
+            width:200px;
+            height:50px;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div>每一个DIV</div>
+    <div>每二个DIV</div>
+    <div>每三个DIV</div>
+    <div>每四个DIV</div>
+    <ul>
+        <li>列表1第1项</li>
+        <li>列表1第2项</li>
+        <li>列表1第3项</li>
+    </ul>
+    <p></p>
+    <ul>
+        <li>列表2第1项</li>
+        <li>列表2第2项</li>
+        <li>列表2第3项</li>
+    </ul>
+    <script>
+        
+        $(function(){
+            //1.获取4个div元素，给4个div设置背景色为蓝色
+            $("div").css("background", "blue");
+            $("div").css("color", "white");
+            $("ul li").css("color", "red");
+        })
+        
+    </script>
+
+</body>
+</html>

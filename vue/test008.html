@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        li{
+            width: 100px;
+            height: 50px;
+            background-color: darkgray;
+            float: left;
+            border: darkgreen 1px solid;
+            margin-left: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .lisa{
+            background-color: darkslateblue;
+        }
+        .card{
+            background-color: darkseagreen;
+            clear: left;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li class="lisa">html</li>
+            <li>css</li>
+            <li>javascript</li>
+
+            <div class="card">html</div>
+            <div class="card" style="display: none;">css</div>
+            <div class="card" style="display: none;">javascript</div>
+        </ul>
+    </div>
+    <script>
+        var lis = document.getElementsByTagName('li');
+        var card = document.getElementsByClassName("card");
+
+        console.log(lis.length)
+        for (var i=0;i<lis.length;i++){
+            console.log(i);
+            lis[i].onclick=function(){
+                console.log(lis[i]);
+            }
+        }
+    </script>
+</body>
+</html>

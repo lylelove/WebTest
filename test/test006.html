@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       
+    <meta charset="UTF-8">
+       
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+       
+    <script src="../vue/vue.js"></script>
+        <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #box {
+            width: 400px;
+            height: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        ul {
+            height: 40px;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+            width: 80px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            color: green;
+            list-style: none;
+        }
+
+        ul li.active {
+            background-color: red;
+        }
+
+        #box>div {
+            width: 390px;
+            text-align: center;
+            line-height: 400px;
+            border: 1px solid red;
+        }
+
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+        <div id="app">
+                <div id="box">
+                        <ul>
+                         <li @key="item.id" @click="handle(index)" :calss="currentIndex == index ? 'active' : '' " v-for="(item,index) in arr">{{item.title}}</li>
+
+                            </ul>
+                        <div @key="item.id" :calss="currentIndex == index ? '' : 'none' " v-for="(item,index) in arr">
+                                {{item.content}}
+                            </div>
+                    </div>
+            </div>
+       
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                currentIndex: 0,
+                arr: [{
+                        id: 1,
+                        title: '新闻',
+                        content: "新闻内容",
+                    },
+                    {
+                        id: 2,
+                        title: '娱乐',
+                        content: "娱乐内容",
+                    },
+                    {
+                        id: 3,
+                        title: '体育',
+                        content: "体育内容",
+                    },
+                ]
+
+            },
+            methods: {
+                handle: function (index) {
+                    this.currentindex = index;
+                    console.log(this.currentindex)
+                }
+            }
+
+        })
+    </script>
+</body>
+
+
+</html>

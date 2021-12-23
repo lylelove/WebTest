@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    #box {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    ul {
+      height: 40px;
+      overflow: hidden;
+    }
+
+    li {
+      float: left;
+      width: 80px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+      color: green;
+      list-style: none;
+    }
+
+    ul li.active {
+      background-color: red;
+    }
+
+    #box>div {
+      width: 290px;
+      text-align: center;
+      line-height: 200px;
+      border: 1px solid red;
+      display: none;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+          <li class="active">html</li>
+          <li>css</li>
+          <li>js</li>
+        </ul>
+    
+        <!-- 内容 -->
+        <div style="display: block;">html</div>
+        <div>css</div>
+        <div>js</div>
+      </div>
+</body>
+</html>

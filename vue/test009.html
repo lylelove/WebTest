@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue.js"></script>
+    <style>
+        li {
+            list-style: none;
+            width: 100px;
+            float: left;
+            text-align: center;
+            border-radius: 5px;
+            margin-left: 10px;
+            background-color: darkturquoise;
+            cursor: pointer;
+        }
+
+        #box div {
+            clear: left;
+
+        }
+
+        .active {
+            background-color: firebrick;
+        }
+
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="box">
+            <ul>
+                <li @key="item.id" v-for="(item,index) in arr" @click="change(index) "
+                    :class=" cindex == index ? 'active':'' ">{{item.title}}</li>
+            </ul>
+            <div @key="item.id" v-for="(item,index) in arr" :class="cindex==index ? '' : 'none' ">{{item.content}}</div>
+        </div>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            cindex: 0,
+            arr: [{
+                    id: 1,
+                    title: '新闻1',
+                    content: "新闻内容1"
+                },
+                {
+                    id: 2,
+                    title: '新闻2',
+                    content: "新闻内容2"
+                },
+                {
+                    id: 3,
+                    title: '新闻3',
+                    content: "新闻内容3"
+                },
+            ]
+        },
+        methods: {
+            change: function (index) {
+                this.cindex = index;
+            }
+        },
+    })
+</script>
+
+</html>

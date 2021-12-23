@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+//@author lyle
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+    <script>
+        //数据填入
+        var x = [
+            [2, 10],
+            [2, 5],
+            [8, 4],
+            [5, 8],
+            [7, 5],
+            [6, 5],
+            [1, 2],
+            [4, 9]
+        ];
+        var c = [
+            [2, 10],
+            [5, 8],
+            [1, 2]
+        ];
+        var rc = 10; //一共循环的次数
+
+        //循环
+        for (var r = 0; r < rc; r++) {
+
+
+
+            //数据设定
+            var xis = []; //数组，表示数据点为那个类群。
+            var count = [0, 0, 0]; //数组，表示每个类群中数据点的个数
+            var res = null; //计算中间数
+            var a = 0; //计算中间数
+            var cr1 = []; //每个数据点到第一个类群中心的的距离
+            var cr2 = []; //每个数据点到第二个类群中心的的距离
+            var cr3 = []; //每个数据点到第三个类群中心的的距离
+
+            //计算距离
+            for (var j = 0; j < x.length; j++) {
+                a = (x[j][0] - c[0][0]) * (x[j][0] - c[0][0]) + (x[j][1] - c[0][1]) * (x[j][1] - c[0][1]);
+                res = Math.sqrt(a);
+                cr1.push(res);
+            };
+            for (var j = 0; j < x.length; j++) {
+                a = (x[j][0] - c[1][0]) * (x[j][0] - c[1][0]) + (x[j][1] - c[1][1]) * (x[j][1] - c[1][1]);
+                res = Math.sqrt(a);
+                cr2.push(res);
+            };
+            for (var j = 0; j < x.length; j++) {
+                a = (x[j][0] - c[2][0]) * (x[j][0] - c[2][0]) + (x[j][1] - c[2][1]) * (x[j][1] - c[2][1]);
+                res = Math.sqrt(a);
+                cr3.push(res);
+            };
+
+            //中心点重置
+            for (var i = 0; i < 3; i++) {
+                for (var j = 0; j < 2; j++) {
+                    c[i][j] = 0;
+                }
+            }
+
+            //计算每个数据点应在哪个类群中
+            for (var i = 0; i < cr1.length; i++) {
+                if (cr1[i] == Math.min(cr1[i], cr2[i], cr3[i])) {
+                    xis.push(1);
+                } else if (cr2[i] == Math.min(cr1[i], cr2[i], cr3[i])) {
+                    xis.push(2)
+                } else {
+                    xis.push(3)
+                }
+            };
+
+            //打印每个数据点所在的类群
+            console.log(xis);
+
+
+            //重新计算中心点的位置
+            for (var i = 0; i < xis.length; i++) {
+                for (var j = 0; j < 3; j++) {
+                    if (xis[i] == j + 1) {
+                        count[j]++;
+                        c[j][0] += x[i][0]
+                        c[j][1] += x[i][1]
+                    }
+                }
+            }
+            for (var i = 0; i < 3; i++) {
+                c[i][0] = c[i][0] / count[i];
+                c[i][1] = c[i][1] / count[i];
+            }
+
+
+
+            //重置距离
+            for (var i = 0; i < cr1.length; i++) {
+                cr1.pop();
+                cr2.pop();
+                cr3.pop();
+            }
+
+            //重置xis
+            for (var i = 0; i < xis.length; i++) {
+                xis.pop();
+            }
+
+        }
+
+        //打印最后中心点位置
+        console.log(c);
+    </script>
+
+</html>

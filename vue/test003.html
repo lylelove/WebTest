@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    数值A<input type="text" id="a" v-model="A">
+    数值B<input type="text" id ="b" v-model="B">
+    <br>
+    <button @click="handle">计算</button>
+    <button @click="del">清除</button>
+    <br>
+    <span style="border: 1px solid black;border-radius: 5px;">{{result}}</span>
+</div>
+</body>
+<script>
+  let vm = new Vue({
+      el:"#app",
+      data:{
+          A:'',
+          B:'',
+          result:'',
+      },
+      methods:{
+          handle:function () {
+              this.result = parseInt(this.A)+parseInt(this.B);
+
+          },
+          del:function () {
+              this.result = '';
+              this.A='';
+              this.B='';
+          }
+      }
+  })
+
+</script>
+</html>

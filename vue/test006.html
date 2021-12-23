@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+        <div v-show="flag">lyle</div>
+        <div v-if="score > 90">youxiu</div>
+        <div v-else-if="score <=30 && score >=20">123</div>
+        <div v-else>234</div>
+        <div @click="change" v-show="a1" id="a" style="width: 100px ;height:100px; background-color: bisque;">
+        </div>
+        <div @click="change" v-show="b1" id="b" style="background-color: blue; height: 100px; width: 100px;">
+        </div>
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                msg:"shuju",
+                score:0,
+                flag:true,
+                a1:true,
+                b1:false,
+            },
+            methods: {
+                change:function(){
+                    this.a1=!this.a1;
+                    this.b1=!this.b1;
+                }
+            },
+        })
+    </script>
+
+</body>
+</html>

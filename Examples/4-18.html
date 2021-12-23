@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery示例4-18</title>
+    <script src="jQuery_min.js"></script>
+
+    <style>
+        div{
+            width:100px;
+            height:30px;
+            background-color: rgb(240, 233, 233);
+        }
+    </style>
+
+</head>
+<body>
+    <H2>***********用jQuery实现元素操作***********</H2>
+    
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    
+    <script>
+        $(function(){
+            //对同一类元素做相同操作，用到隐式迭代
+            //$("div").css("color", "red");
+
+            //对同一类元素做不同操作，需要用到遍历元素（类似for）
+            var sum = 0;
+            //1. each()方法
+            var colorArr = ["red", "green","blue"];
+            $("div").each(function(index, domEle){
+                console.log(index);
+                console.log(domEle);
+                $(domEle).css("color", colorArr[index]);
+                sum += parseInt($(domEle).text());
+                console.log(sum);
+            });
+           
+            //2. $.each()方法
+            //遍历元素
+            $.each($("div"),function(i,ele){
+                console.log(i);
+                console.log(ele);
+
+            });
+
+            //遍历数组
+            $.each(colorArr,function(i,ele){
+                console.log(i);
+                console.log(ele);
+            });
+
+            //遍历对象
+            $.each({name:"mical", age:20, gender:"male"},function(i,ele){
+                console.log(i);     //输出name、age、gender
+                console.log(ele);   //输出"mical"、"20"、"male”
+            });
+        })
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="Zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <div v-html="strHml"></div>
+        <div v-once>{{info}}</div>
+        <input type="text" v-model="text">
+        {{text}}
+        <input type="text" v-model="input">{{input}}
+        <button @click="add">{{shijian}}</button>
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "插值表达式的数据渲染方式",
+                strHml: "填充html",
+                info: "once",
+                text: "123",
+                input: "123",
+                shijian: "事件"
+            },
+            methods: {
+                add: function () {
+                    console.log(this);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery示例4-14</title>
+    <script src="jQuery_min.js"></script>
+    <style>
+        div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+            border:5px;
+        }
+    </style>
+</head>
+<body>
+    <H2>***********用jQuery实现自定义动画***********</H2>
+    <button>自定义动画</button>
+    <div></div>
+
+    <script>
+        $(function(){
+            $("button").click(function(){
+                $("div").animate({
+                    left: 500,
+                    top:300,
+                    opacity: 0.3,
+                    width:400
+                }, 500)
+            });
+            
+        })
+        
+    </script>
+
+</body>
+</html>

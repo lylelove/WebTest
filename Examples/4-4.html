@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery示例4-4</title>
+    <script src="jQuery_min.js"></script>
+    <style>
+        div{
+            width:200px;
+            height:50px;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="grandFather">
+        <div class="father">
+            <div class="son"></div>
+        </div>
+    </div>
+    <div class="nav">
+        <p id="P1">nav的儿子</p>
+        <div>
+            <p>nav的孙子</p>
+        </div>
+        <p>hello</p>
+        <div>ok</div>
+    </div>
+    
+    <script>
+        
+        $(function(){
+            //1. 父 parent()返回的是最近一级的父级元素
+            console.log($(".son").parent());
+            //2. 子
+            //(1)找儿子 children()，类似于子代选择器 
+            $(".nav").children("p").css("color", "red");
+           
+            //(2)选所有的孩子，find()，包括儿子和孙子，类似于后代选择器
+            $(".nav").find("p").css("color", "blue");
+
+            
+        })
+        
+    </script>
+
+</body>
+</html>

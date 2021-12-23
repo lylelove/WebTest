@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery示例4-13</title>
+    <script src="jQuery_min.js"></script>
+    <style>
+        .wrap{
+            background-color: black;
+            width: 580px;
+            height: 400px;
+            padding-top: 20px;
+        }
+        .wrap img{
+            display: block;
+            border: 2;
+            width: 160px;
+            height: 160px;
+        }
+        li{
+            
+            float: left;
+            border: 2px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <H2>***********用jQuery实现图片的半透明效果***********</H2>
+    <div class="wrap">
+        <ul>
+            <li>
+                <a href="#"><img src="./图片/4-13-1.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="./图片/4-13-2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="./图片/4-13-3.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="./图片/4-13-4.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="./图片/4-13-5.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="./图片/4-13-6.jpg" alt=""></a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        
+        $(function(){
+            //当鼠标进入某个li的时候，将其它的兄弟li标签透明度设为0.5
+            //鼠标离开，其他li的透明度改为1
+            $(".wrap li").hover(function(){
+                $(this).siblings().stop().fadeTo(400, 0.5);
+            }, function(){
+                $(this).siblings().stop().fadeTo(400, 1);
+            });
+            
+        })
+        
+    </script>
+
+</body>
+</html>
