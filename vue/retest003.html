@@ -32,6 +32,8 @@
     </div>
     <div id="content">
         <div id="time" :style="{width:widths+'%'}"></div>
+        <button @click="start">start</button>
+        <button @click="reset">reset</button>
     </div>
     <input V-model="widths">{{widths}}<br>
     {{t}}
@@ -39,23 +41,42 @@
     {{date}}
 </div>
 <script>
-    d = new Date()
     let vm = new Vue({
         el:"#app",
         data:{
             message:'<a>123</a>',
             changed:false,
             widths:0,
-            date:new Date(),
-            t : d.getTime()
+            date:new Date().getTime(),
+            t:new Date().getTime(),
+            ti:true,
+            cha:0
         },
         methods:{
-
+            start:function () {
+                if (this.ti){
+                    console.log(this.t)
+                    this.ti=!this.ti
+                    this.cha = this.date-this.t
+                }else {
+                    console.log(this.t)
+                    this.ti=!this.ti
+                    this.cha = this.date-this.t
+                }
+            },
+            reset: function (){
+                this.cha=0
+                this.t=new Date().getTime()
+                this.ti=true
+            }
         },
         mounted: function () {
             var _this = this;
             this.timer = setInterval(function() {
                 _this.date = new Date().getTime();
+                if (_this.ti===true){
+                    _this.t=_this.date-_this.cha
+                }
                 if (_this.widths<100){
                     _this.widths=(_this.date-_this.t)/100
                 }
