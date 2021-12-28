@@ -1,18 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #vcomments{
+            background-color: #fcecec;
+            display: none;
+            position: sticky;
+            bottom:0px;
+            right:0px;
+            float: right;
+            border-radius: 1rem;
+            padding: 10px;
+        }
+        #vcbu{
+            position:fixed;
+            bottom:10px;
+            left:0px;
+            padding: 10px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-<div id="vcomments"> </div>
-    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-    <script>
-        new Valine({
-            el: '#vcomments',
-            appId: 'eYjwSMOsPFqT10xukqABF3cQ-gzGzoHsz',
-            appKey: 'acOkcfVHAJoRHxpAulnDAaj0'
-        })
-    </script>
+<span id="<Your/Path/Name>" class="leancloud_visitors" data-flag-title="Your Article Title">
+    <em class="post-meta-item-text">阅读量 </em>
+    <i class="leancloud-visitors-count">1000000</i>
+</span>
+<script>
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var url0 = window.location.href;
+</script>
+<script id="sc" src="//unpkg.com/valine/dist/Valine.min.js">
+
+</script>
+<script>
+    function gun() {
+        var ce = document.querySelector("#root > div > div > div.chakra-stack.css-wlpsqb > div.footer.css-3m0ceo > div > a");
+        ce.href="https://www.lylelove.top";
+        var ar = document.querySelector("#root > div > div > div.chakra-stack.css-wlpsqb > div.footer.css-3m0ceo > div > div > a.chakra-link.css-f4h6uy");
+        ar.innerHTML="SDUFE课程资源共享计划";
+        ar.href="https://www.sdufe.vip";
+    }
+
+    function left() {
+        var cl = document.querySelector("#root > div > div > div.overlay > div");
+        cl.style.left=0+"px";
+        cl.style.right='';
+        cl.style.borderTopLeftRadius=0+"rem";
+        cl.style.borderBottomLeftRadius=0+"rem";
+        cl.style.borderTopRightRadius=0.5+"rem";
+        cl.style.borderBottomRightRadius=0.5+"rem";
+    }
+    function right() {
+        var cl = document.querySelector("#root > div > div > div.overlay > div");
+        cl.style.right=0+"px";
+        cl.style.left='';
+        cl.style.borderTopLeftRadius=0.5+"rem";
+        cl.style.borderBottomLeftRadius=0.5+"rem";
+        cl.style.borderTopRightRadius=0+"rem";
+        cl.style.borderBottomRightRadius=0+"rem";
+    }
+    function vlight() {
+        oDiv.style.backgroundColor="#fffaf0";
+        var vsys = document.getElementsByClassName("vsys");
+        var vp = document.querySelectorAll('#vcomments p');
+        var vinput = document.querySelectorAll('#vcomments input');
+        var vtext =  document.querySelectorAll('#vcomments textarea');
+        var vbutton =  document.querySelectorAll('#vcomments button');
+        for (var i=0;i<vsys.length;i++){
+            vsys[i].style.color="#000000";
+        }
+        for (var i =0;i<vp.length;i++){
+            vp[i].style.color="#000000";
+        }
+        for (var i=0;i<vinput.length;i++){
+            vinput[i].style.color="#000000";
+        }
+        for (var i=0;i<vtext.length;i++){
+            vtext[i].style.color="#000000";
+        }
+        for (var i=0;i<vbutton.length;i++){
+            vbutton[i].style.color="#000000";
+        }
+    }
+    function vdark() {
+        oDiv.style.backgroundColor="darkslategrey";
+        var vsys = document.getElementsByClassName("vsys");
+        var vp = document.querySelectorAll('#vcomments p');
+        var vinput = document.querySelectorAll('#vcomments input');
+        var vtext =  document.querySelectorAll('#vcomments textarea');
+        var vbutton =  document.querySelectorAll('#vcomments button');
+        for (var i=0;i<vsys.length;i++){
+            vsys[i].style.color="#ffffff";
+        }
+        for (var i =0;i<vp.length;i++){
+            vp[i].style.color="#ffffff";
+        }
+        for (var i=0;i<vinput.length;i++){
+            vinput[i].style.color="#ffffff";
+        }
+        for (var i=0;i<vtext.length;i++){
+            vtext[i].style.color="#ffffff";
+        }
+        for (var i=0;i<vbutton.length;i++){
+            vbutton[i].style.color="#ffffff";
+        }
+    }
+    window.onload=function () {
+        setTimeout(gun(),1000);
+    };
+    var video = document.getElementsByClassName("art-video-player");
+    var oDiv = document.createElement('div');
+    oDiv.id = 'vcomments';
+    document.body.appendChild(oDiv);
+    var obu = document.createElement('button');
+    obu.id = 'vcbu';
+    document.body.appendChild(obu);
+    obu.innerText="留言";
+    obu.onclick = function(){
+        if (obu.innerText==="留言"){
+            left();
+            obu.innerText="收起";
+            oDiv.style.display="block";
+            oDiv.style.width=width/2+"px";
+            var powered = document.querySelector("#vcomments > div.vpower.txt-right");
+            powered.style.display="none"
+            if (video.length>0){
+                video[0].style.display="none";
+            }
+        }else {
+            right()
+            obu.innerText="留言";
+            oDiv.style.display="none";
+            if (video.length>0){
+                video[0].style.display="";
+            }
+        }
+    };
+    window.addEventListener("click", function(){
+        var bdl =document.querySelector("#root > div > div > div.overlay > div > span:nth-child(2) > button");
+        var url=window.location.href;
+        if (url!==url0){
+            window.location.replace(url);
+        }
+        if (obu.innerText==="收起"){
+            if (bdl.ariaLabel==="切换到深色模式"){
+                vlight();
+            }else {
+                vdark();
+            }
+        }
+    });
+    window.onscroll = function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        console.log(scrollTop)
+        if (scrollTop<=height){
+            oDiv.style.top = scrollTop+"px";
+        }
+    };
+    var style="@-webkit-keyframes mymove {" +
+        "    50% {right: "+width/4+"px;}" +
+        "@keyframes mymove {" +
+        "    50% {right: "+width/4+"px;}" +
+        "}";
+    var ele=document.createElement("style");
+    ele.innerHTML=style;
+    document.getElementsByTagName('head')[0].appendChild(ele)
+    new Valine({
+        el: '#vcomments',
+        appId: 'eYjwSMOsPFqT10xukqABF3cQ-gzGzoHsz',
+        appKey: 'acOkcfVHAJoRHxpAulnDAaj0',
+        avatar:"hide",
+        visitor: true,
+        pageSize:3,
+    })
+</script>
 </body>
 </html>

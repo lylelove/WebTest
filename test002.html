@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>菜鸟教程(runoob.com)</title>
+  <style>
+    #myDIV {
+      position: absolute;
+      right: 0;
+      width: 100px;
+      height: 2000px;
+      background-color: coral;
+      color: white;
+      -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+      animation: mymove 5s infinite;
+    }
+
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes mymove {
+      50% {right: 500px;}
+    }
+
+    /* Standard syntax */
+    @keyframes mymove {
+      50% {right:100px;}
+    }
+  </style>
+</head>
+<body>
+
+<p>right 属性支持动画效果。</p>
+<p><b>注意：</b>Internet Explorer 9 及更早 IE 版本不支持 CSS 动画。</p>
+
+<p>逐步改变 DIV 元素的右边的位置，从 0 到 500px:<p>
+<div id="myDIV">
+  <h1>My DIV</h1>
+  <div class="a"></div>
+</div>
+<script>
+  var style=".a{width:100px}";
+  var ele=document.createElement("style");
+  ele.innerHTML=style;
+  document.getElementsByTagName('head')[0].appendChild(ele)
+  var b = 100;
+  window.onscroll = function() {
+    //为了保证兼容性，这里取两个值，哪个有值取哪一个
+    //scrollTop就是触发滚轮事件时滚轮的高度
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    console.log("滚动距离" + scrollTop);
+  }
+</script>
+</body>
+</html>
