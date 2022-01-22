@@ -40,17 +40,38 @@
             <div class="card" style="display: none;">javascript</div>
         </ul>
     </div>
-    <script>
-        var lis = document.getElementsByTagName('li');
-        var card = document.getElementsByClassName("card");
+<script>
 
-        console.log(lis.length)
-        for (var i=0;i<lis.length;i++){
-            console.log(i);
-            lis[i].onclick=function(){
-                console.log(lis[i]);
-            }
-        }
-    </script>
+ 
+//添加或者修改json数据
+function setJson(jsonStr,name,value)
+{
+    if(!jsonStr)jsonStr="{}";
+    var jsonObj = JSON.parse(jsonStr);
+    jsonObj[name] = value;
+        return JSON.stringify(jsonObj) 
+}
+//删除数据
+function deleteJson(jsonStr,name)
+{
+    if(!jsonStr)return null;
+    var jsonObj = JSON.parse(jsonStr);
+    delete jsonObj[name];
+        return JSON.stringify(jsonObj) 
+}
+ 
+//生成测试
+var myjsonStr = setJson(null,"name","aaa");
+alert(myjsonStr);
+//添加测试
+myjsonStr = setJson(myjsonStr,"age",18);
+alert(myjsonStr);
+//修改测试
+myjsonStr = setJson(myjsonStr,"age",20);
+alert(myjsonStr);
+//删除测试
+myjsonStr = deleteJson(myjsonStr,"age");
+alert(myjsonStr);
+</script>
 </body>
 </html>

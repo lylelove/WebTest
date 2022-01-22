@@ -43,6 +43,8 @@
             </ul>
             <div @key="item.id" v-for="(item,index) in arr" :class="cindex==index ? '' : 'none' ">{{item.content}}</div>
         </div>
+		<div :style="{width: cinex+'px',height: '100px', background-color: '#000000';}"></div>
+		<button>12</button>
     </div>
 </body>
 <script>
@@ -70,7 +72,10 @@
         methods: {
             change: function (index) {
                 this.cindex = index;
-            }
+            },
+			add:function(){
+				this.arr = this.arr+this.arr;
+			}
         },
     })
 </script>
