@@ -1,73 +1,80 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title></title>
-		<style>
-		body{
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title></title>
+	<style>
+		body {
 			margin: 0 auto;
 			padding: 0;
 		}
-			.app{
-				display: flex;
-				justify-content: center;
-				float: right;
-				width: 200px;
-				height: 200px;
-				background-color: #f5f5f5;
-				transition: .3s;
-			}
-			.app:hover{
-				/* border-radius: 40px; */
-				box-shadow:5px 5px 10px 2px rgba(100, 100, 100, 0.6) inset;
-			}
-			.app2{
-				display: flex;
-				justify-content: center;
-				float: right;
-				width: 200px;
-				height: 200px;
-				background-color: #f5f5f5;
-				transition: .3s;
-			}
-			.app2:hover{
-				background-color: #ff0000;
-				box-shadow:5px 5px 10px 2px rgba(100, 100, 100, 0.6) inset;
-			}
-		</style>
-	</head>
-	<body>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <div class="app"></div>
-		 <script>
-			var app = document.getElementsByClassName('app')
-			var width = window.innerWidth;
-			for(var i = 0;i<app.length;i++){
-				app[i].style.width=width/5-1+'px';
-				app[i].style.height=width/5-1+'px';
-			}
-			var ran = Math.floor(Math.random()*app.length);
-			app[ran].className='app2';
-			
-		 </script>
-	</body>
+
+		.app {
+			display: flex;
+			justify-content: center;
+			float: right;
+			width: 200px;
+			height: 200px;
+			background-color: #f5f5f5;
+			transition: .3s;
+		}
+
+		.app:hover {
+			/* border-radius: 40px; */
+			box-shadow: 5px 5px 10px 2px rgba(100, 100, 100, 0.6) inset;
+		}
+
+		.app2 {
+			display: flex;
+			justify-content: center;
+			float: right;
+			width: 200px;
+			height: 200px;
+			background-color: #f5f5f5;
+			transition: .3s;
+		}
+
+		.app2:hover {
+			background-color: #ff0000;
+			box-shadow: 5px 5px 10px 2px rgba(100, 100, 100, 0.6) inset;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<div class="app"></div>
+	<iframe src="https://www.lylelove.top"></iframe>
+	<script>
+		var app = document.getElementsByClassName('app')
+		var width = window.innerWidth;
+		for (var i = 0; i < app.length; i++) {
+			app[i].style.width = width / 5 - 1 + 'px';
+			app[i].style.height = width / 5 - 1 + 'px';
+		}
+		var ran = Math.floor(Math.random() * app.length);
+		app[ran].className = 'app2';
+	</script>
+</body>
+
 </html>
