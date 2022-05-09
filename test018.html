@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 1000px;
+            height: 600px;
+            background:
+                    conic-gradient(
+                            from -45deg at 400px 300px,
+                            hsla(170deg, 100%, 70%, .7),
+                            transparent 50%,
+                            transparent),
+                    linear-gradient(-45deg, #060d5e, #002268);
+        }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+</body>
+<script>
+    var app = document.getElementById("app");
+    var i =1;
+    setTimeout(function () {
+        app.style.transform="rotate("+i+"deg)";
+        i=i+1
+    },100)
+</script>
+</html>
