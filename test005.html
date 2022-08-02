@@ -1,41 +1,30 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>test005</title>
-		<style>
-			.dis{
-				width: 10%;
-				height: 200px;
-				background-color: #00CCFF;
-				display: flex;
-				transition: .3s;
-				justify-content: center;
-				text-align: center;
-				
-			}
-			.container{
-				overflow: hidden;
-				display: flex;
-				margin: 0 auto;
-				text-align: center;
-				padding: 0;
-				justify-content: center;
-			}
-			.dis:hover{
-				width: 20%;
-				
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="dis" style="background-color: #00CED1;"></div>
-			<div class="dis"></div>
-			<div class="dis" style="background-color: #00CED1;"></div>
-			<div class="dis"></div>
-		</div>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body{
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden;
+		  border: 0;
+		}
+		iframe{
+		  border: 0;
+		}
+	  </style>
+</head>
+<body>
+	<iframe  id="iframe0"  width="100%" height="800px" ></iframe>
+	<script>
+		var ifr = document.getElementById("iframe0");
+		var hei = window.innerHeight;
+		ifr.height=hei+"px"
+		ifr.src="https://v1.embednotion.com/embed/96d29882ce0948fe95eebca79dc4bc45"
+	  </script>
 
-	</body>
+</body>
 </html>

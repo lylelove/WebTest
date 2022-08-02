@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>文件夹</title>
-  <style>
-    body{
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      border: 0;
-    }
-    iframe{
-      border: 0;
-    }
-  </style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body{
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden;
+		  border: 0;
+		}
+		iframe{
+		  border: 0;
+		}
+	  </style>
+    <script>
+      function load()
+      {
+        var cut01=document.getElementsByClassName('text-t2 flex h-[90px] w-full items-center justify-center')[0];
+        console.log(cut01);
+      }
+      </script>
 </head>
 <body>
-<iframe scrolling="no" id="iframe0"  width="100%" height="800px"></iframe>
-<script>
-  var ifr = document.getElementById("iframe0");
-  var hei = window.innerHeight;
-  ifr.height=hei+"px"
-  ifr.src="https://flowus.cn/share/f3eb86a3-a76e-4b13-8edc-c3e52d51e6ef"
-</script>
+	<iframe  id="iframe0"  width="100%" height="800px" onload="load()" ></iframe>
+	<script>
+		var ifr = document.getElementById("iframe0");
+		var hei = window.innerHeight;
+		ifr.height=hei+"px"
+		ifr.src="https://flowus.cn/lylelove/share/101d3cc5-e78d-4075-957c-9d3329d8b20b"
+	  </script>
+
 </body>
 </html>
