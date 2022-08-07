@@ -6,7 +6,7 @@
 		<title>test006</title>
 		<style>
 			.container{
-				width: 30%;
+
 				overflow: hidden;
 				display: flex;
 				justify-content: center;
@@ -22,20 +22,40 @@
 				border-radius: 30px;
 				transition: .5s;
 			}
+			.item:hover{
+				width: 50%;
+			}
 			.item:active{
 				width: 50%;
 			}
 			.item::after{
 				width: 50%;
 			}
+			#app1{
+				background-color: red;
+			}
+			#app1:hover{
+				background-color: rgba(255,0,0,0.5);
+			}
+			#app2{
+				background-color: green;
+			}
+			#app2:hover{
+				background-color: rgba(0,255,0,0.5);
+			}
+			#app3{
+				background-color: blue;
+			}
+			#app3:hover{
+				background-color: rgba(0,0,255,0.5);
+			}
 		</style>
 	</head>
 	<body>
 		<div class="container">
-			<div class="item"></div>
-			<div class="item"></div>
-			<div class="item"></div>
-			<div class="item"></div>
+			<div class="item" id="app1"></div>
+			<div class="item" id="app2"></div>
+			<div class="item" id="app3"></div>
 		</div>
 	</body>
 </html>
