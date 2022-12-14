@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta name="robots" content="noarchive" />
+    <title>电脑壁纸 - kuaishou-1.com/mk666.cc</title>
+    <link
+      rel="stylesheet"
+      id="style-css"
+      href="static/css/style.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      id="fonts-css"
+      href="static/css/iconfont.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      id="fancybox-css"
+      href="static/css/jquery.fancybox.min.css"
+      type="text/css"
+    />
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="static/js/jquery-migrate.min.js"
+    ></script>
+    <meta
+      name="description"
+      content="包含4K壁纸,美女壁纸,美女图片,风景壁纸,动漫壁纸,明星图片,动物图片,动物壁纸,游戏壁纸,等18个分类的电脑壁纸，支持放大预览和下载。"
+    />
+    <meta
+      name="keywords"
+      content="4K壁纸,美女壁纸,美女图片,风景壁纸,动漫壁纸,明星图片,动物图片,动物壁纸,游戏壁纸,必应壁纸,bing壁纸,必应美图"
+    />
+    <style type="text/css">
+      html {
+        --accent-color: #4370f5;
+      }
+
+      .site-main {
+        min-height: 700px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="site">
+      <div class="site-content container">
+        <div class="row">
+          <div class="col-lg-img">
+            <div class="content-area">
+              <main class="site-main">
+                <article class="type-post post-wallpaper">
+                  <div class="container-wallpaper">
+                    <div class="jigsaw" id="walBox"></div>
+                    <div id="loadmore">壁纸加载中……</div>
+                  </div>
+                </article>
+              </main>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="site-footer"></footer>
+    </div>
+    <div class="gotop">
+      <a id="goTopBtn" href="javascript:;"
+        ><i class="iconfont icon-shang"></i><em>返回顶部</em></a
+      >
+    </div>
+    <script type="text/javascript" src="static/js/hans.min.js"></script>
+    <script
+      type="text/javascript"
+      src="static/js/jquery.fancybox.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="static/js/jquery.lazyload.min.js"
+    ></script>
+    <script type="text/javascript" src="static/js/img.js"></script>
+    <script type="text/javascript">
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        $("body").click(function (e) {
+          var a = new Array("❤");
+          var $i = $("<span/>").text(a[a_idx]);
+          a_idx = (a_idx + 1) % a.length;
+          var x = e.pageX,
+            y = e.pageY;
+          $i.css({
+            "z-index": 999999999999999999999999999,
+            top: y - 20,
+            left: x,
+            position: "absolute",
+            "font-weight": "bold",
+            color: "#dd3333",
+          });
+          $("body").append($i);
+          $i.animate(
+            {
+              top: y - 180,
+              opacity: 0,
+            },
+            1500,
+            function () {
+              $i.remove();
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

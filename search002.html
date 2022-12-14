@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+    <input id="search_input" />
+    <button id="search_button" onclick="f_search_button()">search</button>
+    <script>
+      // 搜索数据
+      const list = [
+        {
+          title: "Java虚拟机",
+          author: {
+            firstName: "王浩",
+            lastName: "wanghao",
+          },
+        },
+        {
+          title: "人工智能",
+          author: {
+            firstName: "侯建军",
+            lastName: "marquis",
+          },
+        },
+      ];
+
+      // 搜索配置，可查看官网文档了解参数
+      const options = {
+        keys: ["title", "author.firstName"],
+      };
+      // 实例化 Fuse
+      const fuse = new Fuse(list, options);
+      var search_result = fuse.search(pattern);
+      console.log(search_result);
+    </script>
+    <div style="width:380px;position: fixed; top:0; bottom:0;right:0px;z-index:9000;"> <iframe src="http://chat.lylelove.top/?action=page.customerService.index&signature=620c70a3cc61029f78f96cb2c9970db9" frameborder="no" height="100%" width="100%"> </div>
+  </body>
+</html>

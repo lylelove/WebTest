@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/epubjs@0.3.88/dist/epub.js"></script>
+    <div class="epub" id="epub"></div>
+    <script>
+      // doc 将epub渲染到doc上
+      var doc = document.querySelector(".epub"),
+        // epub(url) 获得book对象，最好是全局book
+        book = epub("test.epub"),
+        // rendition 最好全局对象
+        rendition = book.renderTo(doc, {
+          // 默认双页显示
+          width: "100%",
+          height: "100%",
+          // 单页滚动显示epub，推荐加上下面两个属性
+          manager: "continuous",
+          flow: "scrolled",
+        });
+
+      // 显示到页面上
+      rendition.display();
+    </script>
+  </body>
+</html>
