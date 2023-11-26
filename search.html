@@ -1,14 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <a href="https:www.lylelove.top">
-      <text>123</text>
-    </a>
-  </body>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Viewer.js Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 引入Viewer.js及其样式文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viewerjs/dist/viewer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/viewerjs/dist/viewer.min.js"></script>
+
+
+  <style type="text/css">
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+<div id="container">
+  <!-- 用img标签展示图片 -->
+  <img id="image" src="https://pd.lylelove.top/api/photo/p8p0a7uzwp4s.png" alt="viewer image">
+</div>
+
+<script type="text/javascript">
+  // 初始化Viewer.js
+  var viewer = new Viewer(document.getElementById('image'), {
+    // 配置：允许缩放、拖动
+    zoomable: true,
+    drag: true,
+    // 配置：以全屏显示
+    fullscreen: true
+  });
+</script>
+</body>
 </html>

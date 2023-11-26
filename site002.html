@@ -1,20 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="mse"></div>
-    <script>
-      let player = new Player({
-        id: "mse",
-        url: "https://ipfsgw03.stariverpan.com:9096/ipfs/bafybeiaikwdxlisdfcecv7iqdr7poduz62mu3oktkxghtbznd44jnnmxhi?v=1&u=605501151982391296&t=1670305416&s=ec3614116c7812009f201f7a28794dc3",
-        fluid: true,
-        playbackRate: [0.5, 0.75, 1, 1.5, 2],
-      });
-    </script>
-  </body>
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Marked in the browser</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+  <div id="content"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var contentDiv = document.getElementById('content');
+      var markdownContent = '# Marked in the browser\n\nRendered by **marked**.';
+      var htmlContent = marked(markdownContent);
+      contentDiv.innerHTML = htmlContent;
+    });
+  </script>
+</body>
+
 </html>

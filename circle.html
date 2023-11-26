@@ -1,0 +1,69 @@
+<!--
+ * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @Date: 2023-01-29 11:51:58
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-11-03 08:49:28
+ * @FilePath: \webtest\circle.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>纯 JavaScript 网络聊天室</title>
+</head>
+
+<body>
+  <div id="chat-container">
+    <div id="chat-list"></div>
+    <div id="chat-input">
+      <input type="text" id="chat-message" placeholder="请输入消息">
+      <button id="chat-send">发送</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script>
+    const socket = io();
+
+    // 登录
+    socket.on("connect", () => {
+      // 获取用户名
+      const username = prompt("请输入用户名");
+
+      // 连接成功后发送登录信息
+      socket.emit("login", { username });
+    });
+
+    // 接收消息
+    socket.on("message", (data) => {
+      // 渲染消息
+      const html = `
+        <div class="chat-message">
+          <span class="username">${data.username}</span>：
+          <span class="message">${data.message}</span>
+          <span class="time">${data.time}</span>
+        </div>
+      `;
+      document.querySelector("#chat-list").innerHTML += html;
+    });
+
+    // 发送消息
+    document.querySelector("#chat-send").addEventListener("click", () => {
+      // 获取消息
+      const message = document.querySelector("#chat-message").value;
+
+      // 发送消息
+      socket.emit("message", {
+        username: document.querySelector("#chat-username").value,
+        message: message,
+      });
+
+      // 清空输入框
+      document.querySelector("#chat-message").value = "";
+    });
+  </script>
+</body>
+
+</html>

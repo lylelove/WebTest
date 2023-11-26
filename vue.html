@@ -1,15 +1,76 @@
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<!--
+ * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @Date: 2023-01-18 18:42:18
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-11-06 18:02:03
+ * @FilePath: \webtest\vue.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ChatGPT 聊天应用</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>ChatGPT 聊天应用</h1>
 
-<div id="app">{{ message }}</div>
+    <div id="chat-container">
+      <div id="chat-log"></div>
+      <input type="text" id="user-input" placeholder="输入消息..." />
+      <button id="send-button">发送</button>
+    </div>
 
-<script>
-  const { createApp } = Vue;
+    <script>
+      // 获取 ChatGPT 回复的函数
+      function getChatGPTResponse(message) {
+        return $.ajax({
+          url: "https://api.chatnio.net",
+          type: "POST",
+          data: { message: message },
+        });
+      }
 
-  createApp({
-    data() {
-      return {
-        message: "Hello Vue!",
-      };
-    },
-  }).mount("#app");
-</script>
+      // 在聊天日志中添加消息
+      function appendToChatLog(sender, message) {
+        var senderTag =
+          sender === "user" ? "<b>你:</b> " : "<b>ChatGPT:</b> ";
+        var logEntry = "<p>" + senderTag + message + "</p>";
+        $("#chat-log").append(logEntry);
+      }
+
+      // 处理用户发送消息的函数
+      function handleUserMessage() {
+        var userInput = $("#user-input").val();
+        if (userInput !== "") {
+          appendToChatLog("user", userInput);
+          $("#user-input").val("");
+
+          getChatGPTResponse(userInput)
+            .done(function (response) {
+              appendToChatLog("chatbot", response.reply);
+            })
+            .fail(function () {
+              appendToChatLog(
+                "chatbot",
+                "抱歉，发生了一个错误。请稍后再试。"
+              );
+            });
+        }
+      }
+
+      // 在发送按钮点击事件上附加 handleUserMessage 函数
+      $(document).ready(function () {
+        $("#send-button").click(handleUserMessage);
+      });
+
+      // 在输入框的回车事件上附加 handleUserMessage 函数
+      $(document).keypress(function (event) {
+        if (event.which === 13) {
+          handleUserMessage();
+        }
+      });
+    </script>
+  </body>
+</html>
